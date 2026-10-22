@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUp, ArrowUpRight, Code2, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
@@ -64,7 +63,6 @@ export function ContactFooter({ locale, github }: { locale: Locale; github: GitH
 
       <footer className="site-footer">
         <div className="footer-brand">
-          <Image className="brand-logo" src="/logo.jpg" width={40} height={40} alt="Seed logo" />
           <strong>SEED / 2026</strong>
         </div>
         <nav aria-label={contact.quickLinks}>

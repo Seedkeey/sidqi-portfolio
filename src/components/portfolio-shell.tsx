@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
@@ -34,7 +33,6 @@ export function PortfolioShell({ locale, github }: { locale: Locale; github: Git
       <a className="skip-link" href="#content">Skip to content</a>
       <header className="site-header">
         <Link href={`/${locale}`} className="brand" aria-label="Seed portfolio home">
-          <Image className="brand-logo" src="/logo.jpg" width={40} height={40} alt="Seed logo" priority />
           <span>SEED / 2026</span>
         </Link>
         <nav aria-label="Primary navigation" className="desktop-nav">
