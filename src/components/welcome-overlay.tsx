@@ -39,7 +39,6 @@ export function WelcomeOverlay() {
       return;
     }
 
-    window.sessionStorage.setItem(welcomeConfig.sessionKey, "1");
     window.setTimeout(() => setState("active"), 0);
     if (welcomeConfig.showSkip) window.requestAnimationFrame(() => skipRef.current?.focus());
 
@@ -57,6 +56,7 @@ export function WelcomeOverlay() {
 
   useEffect(() => {
     if (state !== "exiting") return;
+    window.sessionStorage.setItem(welcomeConfig.sessionKey, "1");
     timerRef.current = window.setTimeout(() => setState("complete"), welcomeConfig.exitDuration);
     return () => {
       if (timerRef.current !== null) window.clearTimeout(timerRef.current);
