@@ -15,6 +15,8 @@ import { ElectricFlow } from "./electric-flow";
 import { ProjectsSection } from "./projects-section";
 import { SkillsSection } from "./skills-section";
 
+import { WelcomeOverlay } from "./welcome-overlay";
+
 const ArduinoScene = dynamic(
   () => import("./arduino-scene").then((module) => module.ArduinoScene),
   { ssr: false },
@@ -26,6 +28,7 @@ export function PortfolioShell({ locale, github }: { locale: Locale; github: Git
 
   return (
     <main className="min-h-dvh">
+      <WelcomeOverlay />
       <CustomCursor />
       <ElectricFlow />
       <a className="skip-link" href="#content">Skip to content</a>

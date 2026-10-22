@@ -28,6 +28,11 @@ export function SkillsSection({ locale }: { locale: Locale }) {
     mass: 0.35,
   });
   const signalX = useTransform(signalProgress, [0, 1], ["0%", "100%"]);
+  const tickerRows = [
+    copy.categories.flatMap((category) => category.skills).slice(0, 7),
+    copy.categories.flatMap((category) => category.skills).slice(7, 14),
+    copy.categories.flatMap((category) => category.skills).slice(14, 21),
+  ];
 
   return (
     <section ref={sectionRef} id="skills" className="skills-section" aria-labelledby="skills-title">
@@ -66,6 +71,18 @@ export function SkillsSection({ locale }: { locale: Locale }) {
             <span>0{index + 1} / {item.label}</span>
             <strong>{item.value}</strong>
           </motion.div>
+        ))}
+      </div>
+
+      <div className="skills-ticker" aria-label="Animated skills capability map">
+        {tickerRows.map((row, rowIndex) => (
+          <div className={`skills-ticker-row ticker-row-${rowIndex + 1}`} key={rowIndex}>
+            <div className="skills-ticker-track">
+              {[...row, ...row].map((skill, skillIndex) => (
+                <span key={`${skill}-${skillIndex}`}>{skill}<b aria-hidden="true"> / </b></span>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
 

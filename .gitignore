@@ -36,6 +36,25 @@ yarn-error.log*
 # vercel
 .vercel
 
+# private/local working files
+/Guide/
+/.venv/
+/.claude/
+AGENTS.md
+CLAUDE.md
+sidqi.md
+*.ani
+*.cur
+Screenshot*
+Antena Yagi.png
+FIber Optic.png
+FTTH.png
+IOT.png
+SIMS.png
+Website jualan.png
+logo Sjpg.jpg
+arduino_uno.glb
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
